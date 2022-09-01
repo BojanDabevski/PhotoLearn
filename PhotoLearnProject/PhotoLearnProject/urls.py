@@ -16,12 +16,13 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from PhotoLearn.views import addCourse,Course,index,addArticle,Article
+from PhotoLearn.views import addCourse,Course,index,addArticle,Article,quiz
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('add/course/', addCourse, name="addCourse"),
     path('add/article/', addArticle, name="addArticle"),
     path('index/', index, name="index"),
+    path('quiz/',quiz,name="quiz"),
     path('courses/', Course, name="courses"),
     path('articles/', Article, name="articles"),
     #path('blockedUsers/', Blocked, name="blocked")

@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-6os33op%^4k7l!2-fmsbn@qbz9c(#yuzrhpdc&lk0vjamtx_h0
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['https://fast-scrubland-08426.herokuapp.com/']
 
 
 # Application definition
@@ -51,6 +51,8 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'PhotoLearnProject.urls'
+CSRF_COOKIE_SECURE=False
+CSRF_TRUSTED_ORIGINS=['https://fast-scrubland-08426.herokuapp.com/']
 
 TEMPLATES = [
     {
@@ -124,3 +126,7 @@ MEDIA_URL = '/data/'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+import django_heroku
+django_heroku.settings(locals())
+
+
